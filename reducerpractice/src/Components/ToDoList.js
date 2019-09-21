@@ -21,6 +21,7 @@ const ToDoList = () => {
               onClick={event => {
                 event.preventDefault();
                 dispatch({ type: "ADD_TODO", payload: newToDoItemText });
+                setNewToDoItemText("");
               }}
               className="toDoButton"
             >
@@ -32,6 +33,20 @@ const ToDoList = () => {
           {state.map(item => (
             <div key={item.id} className="toDoItem">
               <h3>{item.item}</h3>
+              <input
+                type="checkbox"
+                value={item.completed}
+                onClick={() => {
+                  dispatch({
+                    type: "TOGGLE_COMPLETED",
+                    payload: {
+                      item: item.item,
+                      completed: item.completed,
+                      id: item.id
+                    }
+                  });
+                }}
+              />
             </div>
           ))}
         </div>
