@@ -10,3 +10,22 @@
   font-size: calc(10px + 2vmin);
   color: #09d3ac;
 }
+
+.emTitle {
+  border-bottom: solid white 2px;
+  border-top: solid white 2px;
+}
+
+.toDoItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toDoListContainer {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

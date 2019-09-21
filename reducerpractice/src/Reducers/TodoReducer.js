@@ -18,6 +18,24 @@ export const initialState = [
 
 export const todoReducer = (state, action) => {
   switch (action.type) {
+    case "ADD_TODO":
+      return [
+        ...state,
+        {
+          item: action.payload,
+          id: state.length + 1,
+          completed: false
+        }
+      ];
+    case "EDIT_TODO":
+      return state.map(toDo => {
+        if (toDo.id === action.id) {
+          return { ...toDo, item: action.payload };
+        } else {
+          return toDo;
+        }
+      });
+
     default:
       return state;
   }

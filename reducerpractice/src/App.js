@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
 
-// Reducers
-import { initialState } from "./Reducers/TodoReducer.js";
+// Components
+import ToDoList from "./Components/ToDoList.js";
 
 function App() {
-  console.log(initialState);
-  return <div className="App">test</div>;
+  return (
+    <div className="App">
+      <em>From App.js</em>
+      <ToDoList />
+    </div>
+  );
 }
 
 export default App;
