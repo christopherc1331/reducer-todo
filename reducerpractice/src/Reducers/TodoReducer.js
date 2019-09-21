@@ -27,6 +27,7 @@ export const todoReducer = (state, action) => {
           completed: false
         }
       ];
+
     case "EDIT_TODO":
       return state.map(toDo => {
         if (toDo.id === action.id) {
