@@ -54,10 +54,9 @@ export const todoReducer = (state, action) => {
         }
       });
       if (completedCount > 0) {
-        const newStateArray = state.filter(item => {
+        return state.filter(item => {
           return item.completed !== true;
         });
-        return newStateArray;
       } else {
         return state;
       }
