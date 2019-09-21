@@ -21,7 +21,7 @@ export const todoReducer = (state, action) => {
     case "TOGGLE_COMPLETED":
       return state.map(toDo => {
         if (toDo.id === action.payload.id) {
-          return { ...toDo, completed: !action.payload };
+          return { ...toDo, completed: !action.payload.completed };
         } else {
           return toDo;
         }
@@ -45,6 +45,22 @@ export const todoReducer = (state, action) => {
           return toDo;
         }
       });
+
+    case "CLEAR_COMPLETED":
+      let completedCount = 0;
+      state.forEach(item => {
+        if (item.completed === true) {
+          completedCount++;
+        }
+      });
+      if (completedCount > 0) {
+        const newStateArray = state.filter(item => {
+          return item.completed !== true;
+        });
+        return newStateArray;
+      } else {
+        return state;
+      }
 
     default:
       return state;

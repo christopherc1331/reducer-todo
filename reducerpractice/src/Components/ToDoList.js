@@ -29,6 +29,14 @@ const ToDoList = () => {
             </button>
           </form>
         </div>
+        <button
+          onClick={event => {
+            event.preventDefault();
+            dispatch({ type: "CLEAR_COMPLETED" });
+          }}
+        >
+          Clear Completed
+        </button>
         <div className="toDoListContainer notCompleted">
           {state.map(item => (
             <div key={item.id} className="toDoItem">
