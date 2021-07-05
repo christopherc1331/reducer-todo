@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  height: 40vmin;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #09d3ac;
+}
+
+.emTitle {
+  border-bottom: solid white 2px;
+  border-top: solid white 2px;
+}
+
+.toDoItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toDoListContainer {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #555;
+}
+input[type="checkbox"]:checked {
+  background: #abd;
+}
